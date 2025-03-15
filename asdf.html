@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>호윤의 달리기</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f0f0f0;
+	  font-family: 'KakaoBigSans-ExtraBold';
+    }
+	* {
+	  font-family: 'KakaoBigSans-ExtraBold';
+	  text-align: center;
+	}
+	div {
+	  text-align: center;
+	}
+    #hoyun-face {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-image: url('http://59.23.119.207:1111/webshare/asdfasdf.png');
+      background-size: cover;
+      cursor: pointer;
+	  margin: 0 auto;
+    }
+	@font-face {
+		font-family: 'KakaoBigSans-ExtraBold';
+		src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-ExtraBold.woff2') format('woff2');
+		font-weight: 800;
+		font-style: normal;
+	}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <br><br><br><br>
+    <h1>호윤의 달리기</h1>
+    <p id="score">점수: 0</p>
+    <div id="hoyun-face" onclick="clickHoyunFace()"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    let score = 0;
+    let hoyunFaceSize = 100;
+
+    function clickHoyunFace() {
+      score++;
+      document.getElementById('score').innerHTML = `점수: ${score}`;
+      if (score % 2 === 0) {
+        hoyunFaceSize += 20;
+        document.getElementById('hoyun-face').style.width = `${hoyunFaceSize}px`;
+        document.getElementById('hoyun-face').style.height = `${hoyunFaceSize}px`;
+      }
+    }
+  </script>
+</body>
+</html>
